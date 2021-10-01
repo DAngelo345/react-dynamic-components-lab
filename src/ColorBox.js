@@ -8,17 +8,15 @@ export default class ColorBox extends Component {
     ]
   }
 
-  Conditioinal = () => {
+  // Conditioinal = () => {
 
-    if (this.props.opacity >= 0.2) {
-      
-    }
-  }
+  //  this.props.opacity >= 0.2 ?
+  // }
 
   render() {
     return (
       <div className="color-box" style={{opacity: this.props.opacity /*replace null with the value*/}}>
-        {/* your conditional code here! */ }
+        { this.props.opacity >= 0.2 ? <ColorBox opacity={ this.props.opacity - 0.1 } /> : null }
       </div>
     )
   }
