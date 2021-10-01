@@ -8,15 +8,16 @@ export default class ColorBox extends Component {
     ]
   }
 
-  // Conditioinal = () => {
+ recursiveColorBox = () => {
 
-  //  this.props.opacity >= 0.2 ?
-  // }
+  return this.props.opacity >= 0.2 ? <ColorBox opacity={ this.props.opacity - 0.1 } /> : null
+  }
 
   render() {
     return (
       <div className="color-box" style={{opacity: this.props.opacity /*replace null with the value*/}}>
-        { this.props.opacity >= 0.2 ? <ColorBox opacity={ this.props.opacity - 0.1 } /> : null }
+        {/* { this.props.opacity >= 0.2 ? <ColorBox opacity={ this.props.opacity - 0.1 } /> : null } */}
+        {this.recursiveColorBox()}
       </div>
     )
   }
